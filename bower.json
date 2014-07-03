@@ -1,0 +1,26 @@
+{
+  "name": "dropdown-angular",
+  "main": "dropdown.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Yankovsky/dropdown-angular",
+  "authors": [
+    "Yankovsky <YankovskyAndrey@gmail.com>"
+  ],
+  "description": "Generic dropdown directive for angular",
+  "keywords": [
+    "dropdown",
+    "angular",
+    "select",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/*",
+    "!dropdown.js",
+    "!dropdown.min.js"
+  ],
+  "dependencies": {
+    "angular": "~1.2.19",
+    "jquery": "~2.1.1"
+  }
+}
