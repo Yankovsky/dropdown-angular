@@ -12,10 +12,10 @@ angular.module('sampleApp', ['ya.dropdown'])
 And then you can use it like:
 
 ```html
-<div ya-dropdown='open'>
+<div class='ya-dropdown'>
     I am simple one level dropdown
-    <button ng-click='open = !open'>click me</button>
-    <div ng-if='open' ng-click='$event.stopPropagation()'>
+    <button class='ya-dropdown-toggle'>click me</button>
+    <div class='ya-dropdown-content'>
         <ul>
             <li>First item</li>
             <li>Second item</li>
@@ -24,5 +24,3 @@ And then you can use it like:
     </div>
 </div>
 ```
-
-Here ya-dropdown='open' means that on mouse click or Esc key pressed ```open``` will be set to false.
