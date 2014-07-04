@@ -2,41 +2,18 @@
 <html>
 <head>
     <title></title>
-    <style>
-        .ya-dropdown-content {
-            display: none;
-        }
-        .ya-dropdown-content.ya-content-open {
-            display: block;
-        }
-    </style>
     <script src='bower_components/jquery/dist/jquery.js'></script>
     <script src='bower_components/angular/angular.js'></script>
-    <script src='angular-animate.js'></script>
     <script src='dropdown.js'></script>
     <script>
-        angular.module('sampleApp', ['ngAnimate', 'ya.dropdown'])
-        .animation('.ya-content-open', function() {
-            return {
-                beforeAddClass: function(element, className, done) {
-                    if (className == 'ya-content-open') {
-                        element.slideDown('slow', done)
-                    }
-                },
-                beforeRemoveClass: function(element, className, done) {
-                    if (className == 'ya-content-open') {
-                        element.slideUp('slow', done)
-                    }
-                }
-            }
-        })
+        angular.module('sampleApp', ['ya.dropdown'])
     </script>
 </head>
 <body ng-app='sampleApp'>
-<div class='ya-dropdown'>
+<div ya-dropdown='open'>
     I am simple one level dropdown
-    <button class='ya-dropdown-toggle'>click me</button>
-    <div class='ya-dropdown-content'>
+    <button ng-click='open = !open'>click me</button>
+    <div ng-if='open' ng-click='$event.stopPropagation()'>
         <ul>
             <li>First item</li>
             <li>Second item</li>
@@ -44,19 +21,18 @@
         </ul>
     </div>
 </div>
-
-<div class='ya-dropdown'>
+<div ya-dropdown='openParent'>
     I am nested dropdown
-    <button class='ya-dropdown-toggle'>click me</button>
-    <div class='ya-dropdown-content'>
+    <button ng-click='openParent = !openParent'>click me</button>
+    <div ng-if='openParent' ng-click='$event.stopPropagation()'>
         <ul>
             <li>First item</li>
             <li>Second item</li>
             <li>
-                <div class='ya-dropdown'>
+                <div ya-dropdown='openNested'>
                     I am inner dropdown
-                    <button class='ya-dropdown-toggle'>click me</button>
-                    <div class='ya-dropdown-content'>
+                    <button ng-click='openNested = !openNested'>click me</button>
+                    <div ng-if='openNested' ng-click='$event.stopPropagation()'>
                         <ul>
                             <li>First item</li>
                             <li>Second item</li>
