@@ -3,6 +3,12 @@
 <head>
     <title></title>
     <style>
+        .ya-dropdown-open-add {
+
+        }
+        .ya-dropdown-open-remove {
+
+        }
         .ya-dropdown-content {
             display: none;
         }
@@ -16,23 +22,36 @@
     <script src='dropdown.js'></script>
     <script>
         angular.module('sampleApp', ['ngAnimate', 'ya.dropdown'])
-        .animation('.ya-content-open', function() {
-            return {
-                beforeAddClass: function(element, className, done) {
-                    if (className == 'ya-content-open') {
-                        element.slideDown('slow', done)
-                    }
-                },
-                beforeRemoveClass: function(element, className, done) {
-                    if (className == 'ya-content-open') {
-                        element.slideUp('slow', done)
-                    }
-                }
-            }
-        })
+//        .animation('.ya-content-open', function() {
+//            return {
+//                beforeAddClass: function(element, className, done) {
+//                    if (className == 'ya-content-open') {
+//                        element.slideDown('slow', done)
+//                    }
+//                },
+//                beforeRemoveClass: function(element, className, done) {
+//                    if (className == 'ya-content-open') {
+//                        element.slideUp('slow', done)
+//                    }
+//                }
+//            }
+//        })
     </script>
 </head>
 <body ng-app='sampleApp'>
+<button ng-click="open = !open">Open dropdown</button>
+<div>Dropdown opened? {{open}}</div>
+<div class='ya-dropdown' is-open='open'>
+    I am simple one level dropdown
+    <button class='ya-dropdown-toggle'>click me</button>
+    <div class='ya-dropdown-content'>
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+    </div>
+</div>
 <div class='ya-dropdown'>
     I am simple one level dropdown
     <button class='ya-dropdown-toggle'>click me</button>
@@ -44,7 +63,6 @@
         </ul>
     </div>
 </div>
-
 <div class='ya-dropdown'>
     I am nested dropdown
     <button class='ya-dropdown-toggle'>click me</button>

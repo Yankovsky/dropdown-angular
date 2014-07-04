@@ -1,14 +1,29 @@
-angular.module('ya.dropdown', []).directive('yaDropdown',function($document, $animate, $timeout) {
+angular.module('ya.dropdown', []).directive('yaDropdown',function($document, $animate, $timeout, $parse) {
   var ESCAPE_KEY_CODE = 27
   return {
     restrict: 'C',
-    scope: true,
     require: '^yaDropdown',
     controller: function($scope) {
       var that = this
       that.dropdownElement = null
       that.dropdownContentElement = null
       that.isOpen = false
+
+      var getIsOpen, setIsOpen = angular.noop
+
+      that.init = function(element, isOpenAttr) {
+        that.dropdownElement = element
+        if (isOpenAttr) {
+          getIsOpen = $parse(isOpenAttr)
+          setIsOpen = getIsOpen.assign
+
+          $scope.$watch(function() {
+            return !!getIsOpen($scope)
+          }, function(value) {
+            that.isOpen = value
+          })
+        }
+      }
 
       that.toggle = function() {
         that.isOpen = !that.isOpen
@@ -27,6 +42,7 @@ angular.module('ya.dropdown', []).directive('yaDropdown',function($document, $an
         } else {
           unsubscribe()
         }
+        setIsOpen($scope, isOpen);
       })
 
       function subscribe() {
@@ -59,7 +75,7 @@ angular.module('ya.dropdown', []).directive('yaDropdown',function($document, $an
       }
     },
     link: function(scope, element, attrs, yaDropdownCtrl) {
-      yaDropdownCtrl.dropdownElement = element
+      yaDropdownCtrl.init(element, attrs.isOpen)
     }
   }
 }).directive('yaDropdownToggle',function() {
