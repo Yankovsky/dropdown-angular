@@ -10,6 +10,18 @@
     </script>
 </head>
 <body ng-app='sampleApp'>
+{{open}}
+<div ya-dropdown='open'>
+    I am simple one level dropdown
+    <button ng-click='open = !open'>click me</button>
+    <div ng-if='open' ng-click='$event.stopPropagation()'>
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+    </div>
+</div>
 <div ya-dropdown='open'>
     I am simple one level dropdown
     <button ng-click='open = !open'>click me</button>
