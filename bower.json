@@ -1,7 +1,7 @@
 {
   "name": "dropdown-angular",
   "main": "dropdown.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/Yankovsky/dropdown-angular",
   "authors": [
     "Yankovsky <YankovskyAndrey@gmail.com>"
