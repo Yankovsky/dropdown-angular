@@ -1,7 +1,7 @@
 {
   "name": "dropdown-angular",
-  "version": "0.0.0",
-  "description": "Generic dropdown directive for angular",
+  "version": "1.0.0",
+  "description": "Simple dropdown directive for angular",
   "main": "dropdown.js",
   "keywords": [
     "dropdown",

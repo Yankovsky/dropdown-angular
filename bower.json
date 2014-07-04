@@ -1,12 +1,12 @@
 {
   "name": "dropdown-angular",
   "main": "dropdown.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/Yankovsky/dropdown-angular",
   "authors": [
     "Yankovsky <YankovskyAndrey@gmail.com>"
   ],
-  "description": "Generic dropdown directive for angular",
+  "description": "Simple dropdown directive for angular",
   "keywords": [
     "dropdown",
     "angular",
