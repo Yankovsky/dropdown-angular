@@ -3,16 +3,10 @@
 <head>
     <title></title>
     <style>
-        .ya-dropdown-open-add {
-
-        }
-        .ya-dropdown-open-remove {
-
-        }
         .ya-dropdown-content {
             display: none;
         }
-        .ya-dropdown-content.ya-content-open {
+        .ya-dropdown.ya-dropdown-open > .ya-dropdown-content {
             display: block;
         }
     </style>
@@ -22,24 +16,10 @@
     <script src='dropdown.js'></script>
     <script>
         angular.module('sampleApp', ['ngAnimate', 'ya.dropdown'])
-//        .animation('.ya-content-open', function() {
-//            return {
-//                beforeAddClass: function(element, className, done) {
-//                    if (className == 'ya-content-open') {
-//                        element.slideDown('slow', done)
-//                    }
-//                },
-//                beforeRemoveClass: function(element, className, done) {
-//                    if (className == 'ya-content-open') {
-//                        element.slideUp('slow', done)
-//                    }
-//                }
-//            }
-//        })
     </script>
 </head>
 <body ng-app='sampleApp'>
-<button ng-click="open = !open">Open dropdown</button>
+<button ng-click='open = !open'>Toggle first dropdown</button>
 <div>Dropdown opened? {{open}}</div>
 <div class='ya-dropdown' is-open='open'>
     I am simple one level dropdown

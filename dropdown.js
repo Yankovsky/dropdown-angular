@@ -32,10 +32,7 @@ angular.module('ya.dropdown', []).directive('yaDropdown',function($document, $an
       $scope.$watch(function() {
         return that.isOpen
       }, function(isOpen) {
-        console.log(that.dropdownContentElement.offset())
-
         $animate[isOpen ? 'addClass' : 'removeClass'](that.dropdownElement, 'ya-dropdown-open')
-        $animate[isOpen ? 'addClass' : 'removeClass'](that.dropdownContentElement, 'ya-content-open')
 
         if (isOpen) {
           subscribe()
@@ -58,11 +55,11 @@ angular.module('ya.dropdown', []).directive('yaDropdown',function($document, $an
         that.dropdownContentElement.off('click', stopPropagation)
       }
 
-      function stopPropagation(e) {
+      function stopPropagation() {
         return false
       }
 
-      function onClickOutside(e) {
+      function onClickOutside() {
         that.isOpen = false
         $scope.$apply()
       }
