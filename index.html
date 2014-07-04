@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Dropdown-angular : Simple dropdown directive for angular" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Dropdown-angular</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Yankovsky/dropdown-angular">View on GitHub</a>
+
+          <h1 id="project_title">Dropdown-angular</h1>
+          <h2 id="project_tagline">Simple dropdown directive for angular</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Yankovsky/dropdown-angular/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Yankovsky/dropdown-angular/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="dropdown-angular-demo" class="anchor" href="#dropdown-angular-demo"><span class="octicon octicon-link"></span></a>Dropdown-angular demo</h3>
+
+<p>Simple case:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">ya-dropdown=</span><span class="s">'open'</span><span class="nt">&gt;</span>
+    I am simple one level dropdown
+    <span class="nt">&lt;button</span> <span class="na">ng-click=</span><span class="s">'open = !open'</span><span class="nt">&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">'open'</span> <span class="na">ng-click=</span><span class="s">'$event.stopPropagation()'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>First item<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Second item<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Third item<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>Nested dropdowns:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">ya-dropdown=</span><span class="s">'openParent'</span><span class="nt">&gt;</span>
+    I am nested dropdown
+    <span class="nt">&lt;button</span> <span class="na">ng-click=</span><span class="s">'openParent = !openParent'</span><span class="nt">&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">'openParent'</span> <span class="na">ng-click=</span><span class="s">'$event.stopPropagation()'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>First item<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Second item<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">ya-dropdown=</span><span class="s">'openNested'</span><span class="nt">&gt;</span>
+                    I am inner dropdown
+                    <span class="nt">&lt;button</span> <span class="na">ng-click=</span><span class="s">'openNested = !openNested'</span><span class="nt">&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">'openNested'</span> <span class="na">ng-click=</span><span class="s">'$event.stopPropagation()'</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;ul&gt;</span>
+                            <span class="nt">&lt;li&gt;</span>First item<span class="nt">&lt;/li&gt;</span>
+                            <span class="nt">&lt;li&gt;</span>Second item<span class="nt">&lt;/li&gt;</span>
+                            <span class="nt">&lt;li&gt;</span>Third item<span class="nt">&lt;/li&gt;</span>
+                        <span class="nt">&lt;/ul&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Dropdown-angular maintained by <a href="https://github.com/Yankovsky">Yankovsky</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
